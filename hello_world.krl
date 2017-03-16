@@ -17,7 +17,8 @@ A first ruleset for the Quickstart
     clear_name = { "_0": { "name": { "first": "GlaDOS", "last": "" } } }
     __testing = { "queries": [ { "name": "hello"},
                            { "name": "__testing" } ],
-              "events": [ { "domain": "echo", "type": "hello"} ]
+              "events": [ { "domain": "echo", "type": "hello"},
+                          { "domain": "echo", "type": "message", "attr": ["input"]}]
             }
   }
 
@@ -25,5 +26,11 @@ A first ruleset for the Quickstart
     select when echo hello
     send_directive("say") with
       something = "Hello World"
+  }
+
+  rule message {
+    select when echo message
+    send_directive("say") with
+      something = event:attr("input")
   }
 }
