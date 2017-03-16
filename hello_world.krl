@@ -1,6 +1,6 @@
 ruleset echo {
   meta {
-    name "Hello World"
+    name "Echo"
     description <<
 A first ruleset for the Quickstart
 >>
