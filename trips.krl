@@ -23,7 +23,7 @@ A ruleset for the lab
       trip_length = event:attr("mileage")
     fired {
       raise explicit event "trip_processed"
-        attributes event:attrs()
+        attributes {"mileage": event:attr("mileage"), "timestamp": time:now()}
     }
   }
 
