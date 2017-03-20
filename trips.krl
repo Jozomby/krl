@@ -36,6 +36,7 @@ A ruleset for the lab
       noop()
     fired {
       raise explicit event "found_long_trip"
+        attributes event:attrs()
     }
   }
 }
